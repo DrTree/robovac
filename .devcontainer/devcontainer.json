@@ -1,0 +1,35 @@
+{
+    "name": "robovac-dev",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "..",
+        "args": {
+            "VARIANT": "3.13-bullseye"
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {},
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "20"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python3.13",
+                "python.formatting.provider": "black",
+                "python.linting.enabled": true,
+                "python.linting.pylintEnabled": true
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-python.isort",
+                "ms-toolsai.jupyter",
+                "github.vscode-pull-request-github"
+            ]
+        }
+    },
+    "postCreateCommand": "python -m pip install --upgrade pip && pip install -r requirements.txt && pip install codex-cli",
+    "remoteUser": "vscode"
+}

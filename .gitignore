@@ -1,1 +1,7 @@
 /node_modules
+.config
+__pycache__/
+
+# Ignore everything in dev/config except the canonical configuration file
+dev/config/*
+!dev/config/configuration.yaml

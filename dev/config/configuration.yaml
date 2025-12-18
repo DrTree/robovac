@@ -1,0 +1,6 @@
+default_config:
+
+logger:
+  default: critical
+  logs:
+    custom_components.robovac: debug
